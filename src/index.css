@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Fuente única de identidad. No hay modo oscuro aprobado en este bootstrap. */
+:root {
+  --brand-primary: #059669;
+  --brand-primary-dark: #064E3B;
+  --brand-secondary: #0F172A;
+  --brand-background: #F8FAFC;
+  --brand-accent: #F59E0B;
+  --background: var(--brand-background);
+  --foreground: var(--brand-secondary);
+  --card: var(--brand-background);
+  --card-foreground: var(--brand-secondary);
+  --popover: var(--brand-background);
+  --popover-foreground: var(--brand-secondary);
+  --primary: var(--brand-primary);
+  /* Texto oscuro sobre esmeralda para no asumir contraste de texto blanco. */
+  --primary-foreground: var(--brand-secondary);
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: var(--brand-background);
+  --muted: var(--brand-background);
+  --muted-foreground: var(--brand-primary-dark);
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-secondary);
+  --destructive: var(--brand-secondary);
+  --border: color-mix(in srgb, var(--brand-primary-dark) 25%, transparent);
+  --input: var(--border);
+  --ring: var(--brand-primary-dark);
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', system-ui, sans-serif;
+  --font-heading: var(--font-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--brand-primary-dark);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply m-0 bg-background font-sans text-foreground; }
+}
